@@ -13,6 +13,8 @@ struct body: View {
     
     var body: some View {
         
+        NavigationStack{
+            
         //import back image
         Image("back")
             .resizable()
@@ -23,13 +25,11 @@ struct body: View {
             showingPopover = true
         }
         .offset(x: 0, y: -260)
-        .popover(isPresented: self.$showingPopover,
-                 attachmentAnchor: .point(.center),arrowEdge: {Text("This is a custom popover!")},
-                 
-                 
-                 
-                 //calves button
-                 content: Button("Calves") {
+
+        
+        
+        //calves button
+        Button("Calves") {
             /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
         }
         .offset(x: 40, y: -140)
@@ -51,6 +51,17 @@ struct body: View {
             /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
         }
         .offset(x: 75, y: -500)
+        
+       
+            VStack{
+                
+                NavigationLink(destination: bodyBack()) {
+                    
+                    Text("Flip to Back View")
+                    
+                }
+            }
+        }
         
     }
 }
