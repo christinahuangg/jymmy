@@ -9,7 +9,7 @@ import SwiftUI
 
 struct bodyBack: View {
     var body: some View {
-        Image("back")
+        Image("front")
             .resizable()
             .frame(width: 200.0, height: 550.0)
     }

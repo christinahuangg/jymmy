@@ -13,7 +13,6 @@ struct body: View {
     
     var body: some View {
         
-        NavigationStack{
             
         //import back image
         Image("back")
@@ -21,8 +20,9 @@ struct body: View {
             .frame(width: 200.0, height: 550.0)
         
         //glutes button
-        Button("glutes") {
+        Button("Glutes") {
             showingPopover = true
+
         }
         .offset(x: 0, y: -260)
 
@@ -30,41 +30,53 @@ struct body: View {
         
         //calves button
         Button("Calves") {
-            /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
+            showingPopover = true
+
         }
         .offset(x: 40, y: -140)
         
         //hamstrings
         Button("Hamstrings") {
-            /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
+            showingPopover = true
+
         }
+
         .offset(x: -35, y: -235)
         
         //back
         Button("Back") {
-            /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
+            showingPopover = true
+
         }
         .offset(x: 0, y: -450)
         
         //triceps
         Button("Triceps") {
-            /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
+            showingPopover = true
+
+        }
+        .popover(isPresented: $showingPopover, attachmentAnchor: .point(.center)) {
+            Text("This is a popover!")
+            Button("Back to Jymmy") {
+                
+            }
+
         }
         .offset(x: 75, y: -500)
+            
         
-       
             VStack{
                 
                 NavigationLink(destination: bodyBack()) {
                     
-                    Text("Flip to Back View")
+                    Text("Flip for Back View")
                     
                 }
             }
         }
         
     }
-}
+
 
 #Preview {
     body()
