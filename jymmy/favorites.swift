@@ -9,8 +9,31 @@ import SwiftUI
 
 struct SwiftUIView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
+        
+        VStack{
+            
+            HStack{
+                
+                Spacer()
+                Button {
+                    
+                }//button ends
+                label: {
+                    
+                    Image("addButton")
+                    
+                }//label ends
+                
+                
+            }//hstack
+            .padding(.horizontal)
+        
+        }//vstack
+        List {
+            /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Content@*/Text("Content")/*@END_MENU_TOKEN@*/
+        }
+            
+    }//body
 }
 
 #Preview {
