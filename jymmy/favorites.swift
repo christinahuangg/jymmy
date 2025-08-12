@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct SwiftUIView: View {
+   
+    @State private var showSheet = false
+    
     var body: some View {
         
         VStack{
@@ -27,6 +30,7 @@ struct SwiftUIView: View {
                 
             }//hstack
             .padding(.horizontal)
+            
         
         }//vstack
         List {
