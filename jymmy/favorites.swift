@@ -18,6 +18,39 @@ struct FavoritesView: View {
                     showCard.toggle()
                 } label: {
                     Image("addButton")
+                }.popover(isPresented: $showPopover, arrowEdge: .bottom) {
+                    ScrollView {
+                        ZStack(alignment: .leading, spacing: 20) {
+                            ForEach(noEquipmentCategories) { category in
+                                VStack(alignment: .leading) {
+                                    Text(category.name)
+                                        .font(.title2)
+                                        .fontWeight(.bold)
+                                        .padding(.bottom, 5)
+                                    
+                                    ForEach(category.exercises) { exercise in
+                                        VStack(alignment: .leading, spacing: 2) {
+                                            Text(exercise.name)
+                                                .font(.headline)
+                                            Text("Level: \(exercise.level)")
+                                                .font(.subheadline)
+                                                .foregroundColor(.secondary)
+                                            Text(exercise.instructions)
+                                                .font(.footnote)
+                                                .foregroundColor(.gray)
+                                                .padding(.bottom, 5)
+                                        }
+                                        Divider()
+                                    }
+                                }
+                                .padding()
+                                .background(Color(UIColor.systemGray6))
+                                .cornerRadius(12)
+                            }
+                        }
+                        .padding()
+                    }
+                    .frame(width: 350, height: 400) // Controls popover size
                 }
             }
             .padding(.horizontal)
