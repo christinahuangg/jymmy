@@ -67,6 +67,8 @@ struct back: View {
                 showingPopover = true
 
             }
+            .offset(x: 75, y: -500)
+            
             .popover(isPresented: $showingPopover, attachmentAnchor: .point(.center)) {
                 Text("This is a popover!")
                 Button("Back to Jymmy") {
@@ -74,12 +76,10 @@ struct back: View {
                 }
 
             }
-            .offset(x: 75, y: -500)
-
+           
             Button("Flip for Front View") {
                 flipped.toggle()
             }
-            .padding(.top, 20)
         }
     }
 }

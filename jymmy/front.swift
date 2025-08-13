@@ -41,13 +41,14 @@ struct front: View {
             Button("Quads") {
                 showingPopover = true
             }
-            .offset(x: -70, y: )
+            .offset(x: -40, y: -250)
             
             //abs
             Button("Abs") {
                 showingPopover = true
 
             }
+            .offset(x: 0, y: -400)
             
             
             .popover(isPresented: $showingPopover, attachmentAnchor: .point(.center)) {
@@ -55,14 +56,12 @@ struct front: View {
                 Button("Back to Jymmy") {
                     showingPopover = false
                 }
-
             }
     
             
             Button("Flip for Back View") {
                 flipped.toggle()
             }
-            .padding(.top, 20)
         }
     }
 }
