@@ -10,15 +10,10 @@ import SwiftUI
 struct _Buttons: View {
   
     var body: some View {
-        Spacer()
         NavigationStack{
             VStack{
-                
-
                 ZStack{
-                    
                     HStack{
-                        
                         NavigationLink(destination: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Destination@*/Text("Destination")/*@END_MENU_TOKEN@*/) {
                             Image(systemName: "house.fill")
                                 .font(.system(size: 55))
@@ -81,7 +76,7 @@ struct _Buttons: View {
                 
                 }//end toolbarItemgrouop
             }//toolbar
-            toolbarBackground(.green)
+            .toolbarBackground(.green)
 
         }//end navStack
             
