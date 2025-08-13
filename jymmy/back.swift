@@ -32,7 +32,7 @@ struct back: View {
                 .frame(width: 200.0, height: 550.0)
             
             //glutes button
-            Button("Glutes") {
+            Button("    ") {
                 showingPopover = true
 
             }
@@ -69,14 +69,49 @@ struct back: View {
             }
             .offset(x: 75, y: -500)
             
-            .popover(isPresented: $showingPopover, attachmentAnchor: .point(.center)) {
-                Text("This is a popover!")
+            .popover(isPresented: $showingPopover, arrowEdge: .bottom) {
+                ScrollView {
+                    LazyVStack(alignment: .leading, spacing: 16) {
+                        ForEach(noEquipmentCategories) { category in
+                            VStack(alignment: .leading, spacing: 8) {
+                                Text(category.name)
+                                    .font(.title3)
+                                    .fontWeight(.bold)
+                                
+                                ForEach(category.exercises) { exercise in
+                                    VStack(alignment: .leading, spacing: 4) {
+                                        Text(exercise.name)
+                                            .font(.headline)
+                                        if !exercise.level.isEmpty {
+                                            Text("Level: \(exercise.level)")
+                                                .font(.subheadline)
+                                                .foregroundColor(.secondary)
+                                        }
+                                        Text(exercise.instructions)
+                                            .font(.footnote)
+                                            .foregroundColor(.gray)
+                                    }
+                                    Divider()
+                                }
+                            }
+                            .padding()
+                            .background(Color(UIColor.systemGray6))
+                            .cornerRadius(10)
+                            .frame(maxWidth: .infinity, alignment: .leading) // fill width
+                        }
+                    }
+                    .padding()
+                    .frame(maxWidth: .infinity) // make LazyVStack take full width
+                }//scrollView
+                .frame(minWidth: 400, minHeight: 500) // optional: set minimum popover size
+                
                 Button("Back to Jymmy") {
                     showingPopover = false
                 }
-
-            }
+                
+            }//popover
            
+
             Button("Flip for Front View") {
                 flipped.toggle()
             }
