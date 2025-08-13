@@ -22,18 +22,22 @@ struct _Buttons: View {
                         NavigationLink(destination: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Destination@*/Text("Destination")/*@END_MENU_TOKEN@*/) {
                             Image(systemName: "house.fill")
                                 .font(.system(size: 55))
+                                .buttonStyle(.borderedProminent)
+                                .foregroundColor(Color("dark bluegreen"))
                         }
                                             .padding()
                         NavigationLink(destination: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Destination@*/Text("Destination")/*@END_MENU_TOKEN@*/) {
                             
                             Image(systemName: "dumbbell.fill")
                                 .font(.system(size: 65))
+                                .foregroundColor(Color("dark bluegreen"))
                         }
                         .padding()
                         NavigationLink(destination: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Destination@*/Text("Destination")/*@END_MENU_TOKEN@*/) {
                             Image(systemName: "heart.fill")
                                 .font(.system(size: 55))
-                                                        }
+                                .foregroundColor(Color("dark bluegreen"))
+                   }
                         
                         .padding()
                         
@@ -54,25 +58,31 @@ struct _Buttons: View {
                     
                     NavigationLink(destination: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Destination@*/Text("Destination")/*@END_MENU_TOKEN@*/) {
                         Image(systemName: "house.fill")
-                            .font(.system(size: 50))
+                            .font(.system(size: 49))
+                            .foregroundColor(Color("dark bluegreen"))
+
                     }
-                    
+                    .padding()
                     NavigationLink(destination: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Destination@*/Text("Destination")/*@END_MENU_TOKEN@*/) {
                         
                         Image(systemName: "dumbbell.fill")
                             .font(.system(size: 60))
+                            .foregroundColor(Color("dark bluegreen"))
+
                     }
-                
+                    .padding()
                     NavigationLink(destination: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Destination@*/Text("Destination")/*@END_MENU_TOKEN@*/) {
                         Image(systemName: "heart.fill")
-                            .font(.system(size: 50))
+                            .font(.system(size: 53))
+                            .foregroundColor(Color("dark bluegreen"))
+
                     }
-                 
+                    .padding()
                 
                 }//end toolbarItemgrouop
-                
             }//toolbar
-                
+            toolbarBackground(.green)
+
         }//end navStack
             
         }//end body

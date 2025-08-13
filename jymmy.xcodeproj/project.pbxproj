@@ -13,6 +13,7 @@
 /* Begin PBXFileReference section */
 		BD2E0D9A2E4BBB4D0095F765 /* jymmy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = jymmy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDCF987C2E4BD4CC0072150C /* 3Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 3Buttons.swift; sourceTree = "<group>"; };
+		BDCF98972E4D1BAC0072150C /* Custom tabs app.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "Custom tabs app.xcodeproj"; path = "/Users/scholar/Desktop/Custom tabs app/Custom tabs app.xcodeproj"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -37,6 +38,7 @@
 		BD2E0D912E4BBB4D0095F765 = {
 			isa = PBXGroup;
 			children = (
+				BDCF98972E4D1BAC0072150C /* Custom tabs app.xcodeproj */,
 				BDCF987C2E4BD4CC0072150C /* 3Buttons.swift */,
 				BD2E0D9C2E4BBB4D0095F765 /* jymmy */,
 				BD2E0D9B2E4BBB4D0095F765 /* Products */,
@@ -47,6 +49,13 @@
 			isa = PBXGroup;
 			children = (
 				BD2E0D9A2E4BBB4D0095F765 /* jymmy.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BDCF989A2E4D1BAC0072150C /* Products */ = {
+			isa = PBXGroup;
+			children = (
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -103,6 +112,12 @@
 			preferredProjectObjectVersion = 77;
 			productRefGroup = BD2E0D9B2E4BBB4D0095F765 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = BDCF989A2E4D1BAC0072150C /* Products */;
+					ProjectRef = BDCF98972E4D1BAC0072150C /* Custom tabs app.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				BD2E0D992E4BBB4D0095F765 /* jymmy */,
