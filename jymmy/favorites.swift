@@ -8,77 +8,68 @@
 import SwiftUI
 
 struct FavoritesView: View {
-    @State private var showCard = false
-    
+    @State private var showPopover = false
+
     var body: some View {
         VStack {
             HStack {
                 Spacer()
                 Button {
-                    showCard.toggle()
+                    showPopover.toggle()
                 } label: {
+                    // Use a system image for a reliable preview. Replace with your asset if available.
                     Image("addButton")
-                }.popover(isPresented: $showPopover, arrowEdge: .bottom) {
+                        .resizable()
+                        .frame(width: 34, height: 34)
+                }
+                .buttonStyle(.plain)
+                .popover(isPresented: $showPopover, arrowEdge: .bottom) {
                     ScrollView {
-                        ZStack(alignment: .leading, spacing: 20) {
+                        LazyVStack(alignment: .leading, spacing: 16) {
                             ForEach(noEquipmentCategories) { category in
-                                VStack(alignment: .leading) {
+                                VStack(alignment: .leading, spacing: 8) {
                                     Text(category.name)
-                                        .font(.title2)
+                                        .font(.title3)
                                         .fontWeight(.bold)
-                                        .padding(.bottom, 5)
                                     
                                     ForEach(category.exercises) { exercise in
-                                        VStack(alignment: .leading, spacing: 2) {
+                                        VStack(alignment: .leading, spacing: 4) {
                                             Text(exercise.name)
                                                 .font(.headline)
-                                            Text("Level: \(exercise.level)")
-                                                .font(.subheadline)
-                                                .foregroundColor(.secondary)
+                                            if !exercise.level.isEmpty {
+                                                Text("Level: \(exercise.level)")
+                                                    .font(.subheadline)
+                                                    .foregroundColor(.secondary)
+                                            }
                                             Text(exercise.instructions)
                                                 .font(.footnote)
                                                 .foregroundColor(.gray)
-                                                .padding(.bottom, 5)
                                         }
                                         Divider()
                                     }
                                 }
                                 .padding()
                                 .background(Color(UIColor.systemGray6))
-                                .cornerRadius(12)
+                                .cornerRadius(10)
+                                .frame(maxWidth: .infinity, alignment: .leading) // fill width
                             }
                         }
                         .padding()
-                    }
-                    .frame(width: 350, height: 400) // Controls popover size
-                }
+                        .frame(maxWidth: .infinity) // make LazyVStack take full width
+                    }//scrollView
+                    .frame(minWidth: 400, minHeight: 500) // optional: set minimum popover size
+                }//popover
             }
             .padding(.horizontal)
-            
+
             List {
                 Text("Content")
             }
         }
-        .overlay(alignment: .bottom) {
-            BottomPopup(isPresented: $showCard, height: 600) {
-                ScrollView {
-                    VStack(alignment: .leading, spacing: 20) {
-                        ForEach(noEquipmentCategories) { category in
-                            Text(category.name)
-                                .font(.headline)
-                                .padding(.horizontal)
-                            
-                            VStack(spacing: 12) {
-                                ForEach(category.exercises) { exercise in
-                                    ExerciseCard(exercise: exercise)
-                                }
-                            }
-                            
-                        }
-                    }
-                    .padding(.vertical)
-                }
-            }
-        }
     }
 }
+
+#Preview {
+    FavoritesView()
+}
+

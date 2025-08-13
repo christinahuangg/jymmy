@@ -45,11 +45,11 @@ struct BottomPopup<Content: View>: View {
         if isPresented {
             VStack(spacing: 0) {
                 // The little handle pill (purely decorative)
-                Capsule()
-                    .frame(width: 80, height: 10)
-                    .foregroundStyle(.black.opacity(0.12))
-                    .padding(.top, 12)
-                    .padding(.bottom, 8)
+                //Capsule()
+                    //.frame(width: 80, height: 10)
+                    //.foregroundStyle(.black.opacity(0.12))
+                    //.padding(.top, 12)
+                    //.padding(.bottom, 8)
                 
                 // Your actual content (e.g., ScrollView of exercise cards)
                 content

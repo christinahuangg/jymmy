@@ -11,6 +11,8 @@ struct ContentView: View {
     var body: some View {
         
         ZStack{
+            Image("background")
+                .ignoresSafeArea()
             VStack {
                 Image(systemName: "globe")
                     .imageScale(.large)
