@@ -24,7 +24,7 @@ struct ContentView: View {
             Text("New Change - Kylie")
             Text("Conflict testing")
             
-            
+           
         }
         .padding()
     }
