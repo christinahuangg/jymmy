@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
+
         
         ZStack{
             
@@ -26,6 +27,8 @@ struct ContentView: View {
 
         }//ZStack
     }//body
+
+}
 
 #Preview {
     ContentView()
