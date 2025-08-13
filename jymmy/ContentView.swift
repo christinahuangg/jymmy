@@ -11,8 +11,6 @@ struct ContentView: View {
     var body: some View {
         
         ZStack{
-            Image("background")
-                .ignoresSafeArea()
             VStack {
                 Image(systemName: "globe")
                     .imageScale(.large)
@@ -28,13 +26,6 @@ struct ContentView: View {
                 Text("New Change - Kylie")
                 Text("Conflict testing")
             }//VStack
-            
-            NavigationStack{
-                NavigationLink("Favorites") {
-                    FavoritesView()
-                        .navigationBarBackButtonHidden(true)
-                }
-            }
         }//ZStack
     }//body
 }
