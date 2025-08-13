@@ -7,39 +7,45 @@
 
 import SwiftUI
 
-struct SwiftUIView: View {
-   
-    @State private var showSheet = false
+struct FavoritesView: View {
+    @State private var showCard = false
     
     var body: some View {
-        
-        VStack{
-            
-            HStack{
-                
+        VStack {
+            HStack {
                 Spacer()
                 Button {
-                    
-                }//button ends
-                label: {
-                    
+                    showCard.toggle()
+                } label: {
                     Image("addButton")
-                    
-                }//label ends
-                
-                
-            }//hstack
+                }
+            }
             .padding(.horizontal)
             
-        
-        }//vstack
-        List {
-            /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Content@*/Text("Content")/*@END_MENU_TOKEN@*/
+            List {
+                Text("Content")
+            }
         }
-            
-    }//body
-}
-
-#Preview {
-    SwiftUIView()
+        .overlay(alignment: .bottom) {
+            BottomPopup(isPresented: $showCard, height: 600) {
+                ScrollView {
+                    VStack(alignment: .leading, spacing: 20) {
+                        ForEach(noEquipmentCategories) { category in
+                            Text(category.name)
+                                .font(.headline)
+                                .padding(.horizontal)
+                            
+                            VStack(spacing: 12) {
+                                ForEach(category.exercises) { exercise in
+                                    ExerciseCard(exercise: exercise)
+                                }
+                            }
+                            
+                        }
+                    }
+                    .padding(.vertical)
+                }
+            }
+        }
+    }
 }
