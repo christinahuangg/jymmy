@@ -12,21 +12,19 @@ struct ContentView: View {
 
         
         ZStack{
-            VStack {
-                Image(systemName: "globe")
-                    .imageScale(.large)
-                    .foregroundStyle(.tint)
-                Text("Hello, world!")
-                Text("Change1")
-                Text("Amelia")
-                Text("Kylie")
-                
-                Text("New change - Amelia")
-                
-                Text("New Change - Christina")
-                Text("New Change - Kylie")
-                Text("Conflict testing")
-            }//VStack
+            
+//            Image("background")
+//                .scaledToFill() // fill the entire frame without letterboxing
+//                .frame(maxWidth: .infinity, maxHeight: .infinity) // take all available space
+//                .ignoresSafeArea() // go under safe areas
+    
+            NavigationStack{
+                NavigationLink("Fav") {
+                    FavoritesView()
+                }
+            }
+            }
+
         }//ZStack
     }//body
 
