@@ -38,7 +38,7 @@ struct _Buttons: View {
                     .frame(width:350, height:100, alignment: .center)
                     .background(
                         RoundedRectangle(cornerRadius: 25)
-                            .fill(Color.green.opacity(0.15))
+                            .fill(Color("mediumteal").opacity(0.15))
                             .shadow(radius: 10) // shadow to the background box
                     )//end green background
                 }//end ZStack
