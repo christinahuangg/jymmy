@@ -11,18 +11,19 @@ struct _Buttons: View {
    
     var body: some View {
         NavigationStack{
-            Spacer()
             Text("Welcome")
                 .foregroundColor(Color("dark bluegreen"))
                 .font(.system(size: 60))
-
+                .fontWeight(.bold)
                 .shadow(radius: 15)
                 
-            Spacer()
+                .padding()
             Image("jymmy app icon")
                 .resizable()
                 .scaledToFit()
                 .frame(width: 250, height: 250)
+                .padding(150)
+            
             Spacer()
             HStack{
                 ZStack{
