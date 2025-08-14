@@ -12,6 +12,7 @@ struct _Buttons: View {
     var body: some View {
         NavigationStack{
             Text("Welcome")
+                .fontWeight(.bold)
                 .foregroundColor(Color("dark bluegreen"))
                 .font(.system(size: 60))
                 .fontWeight(.bold)
