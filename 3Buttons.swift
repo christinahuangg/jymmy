@@ -13,6 +13,7 @@ struct _Buttons: View {
         NavigationStack{
             Spacer()
             Text("Welcome")
+                .fontWeight(.bold)
                 .foregroundColor(Color("dark bluegreen"))
                 .font(.system(size: 60))
 
