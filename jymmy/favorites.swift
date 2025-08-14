@@ -30,20 +30,22 @@ struct FavoritesView: View {
                                     Text(category.name)
                                         .font(.title3)
                                         .fontWeight(.bold)
+                                        .foregroundColor(Color("creamwhite"))
                                     
                                     ForEach(category.exercises) { exercise in
                                         HStack {
                                             VStack(alignment: .leading, spacing: 4) {
                                                 Text(exercise.name)
                                                     .font(.headline)
+                                                    .foregroundColor(Color("creamwhite"))
                                                 if !exercise.level.isEmpty {
                                                     Text("Level: \(exercise.level)")
                                                         .font(.subheadline)
-                                                        .foregroundColor(.secondary)
+                                                        .foregroundColor(Color("lightgrey"))
                                                 }
                                                 Text(exercise.instructions)
                                                     .font(.footnote)
-                                                    .foregroundColor(.gray)
+                                                    .foregroundColor(Color("creamwhite"))
                                             }
                                             
                                             Spacer()
@@ -56,7 +58,7 @@ struct FavoritesView: View {
                                                 }
                                             } label: {
                                                 Image(systemName: favoriteExerciseIDs.contains(exercise.id) ? "heart.fill" : "heart")
-                                                    .foregroundColor(.red)
+                                                    .foregroundColor(Color("lightpink"))
                                             }
                                             .buttonStyle(.plain)
                                         }
@@ -64,7 +66,7 @@ struct FavoritesView: View {
                                     }
                                 }
                                 .padding()
-                                .background(Color(UIColor.systemGray6))
+                                .background(Color("mediumteal"))
                                 .cornerRadius(10)
                                 .frame(maxWidth: .infinity, alignment: .leading)
                             }
@@ -84,10 +86,16 @@ struct FavoritesView: View {
                 
                 if favoriteExercises.isEmpty {
                     Text("No favorites yet")
-                        .foregroundColor(.secondary)
+                        .font(.headline)
+                        .fontWeight(.bold)
+                        .foregroundColor(.darkBluegreen)
                 } else {
                     ForEach(favoriteExercises) { exercise in
                         Text(exercise.name)
+                            .font(.headline)
+                            .fontWeight(.bold)
+                            .foregroundColor(Color("dark bluegreen"))
+                        
                     }
                 }
             }
