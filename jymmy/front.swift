@@ -113,8 +113,6 @@ struct front: View {
                 }
 
             }
-
-
         }
     }
 }
