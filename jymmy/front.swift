@@ -48,6 +48,7 @@ struct front: View {
                 showingPopover = true
 
             }
+            .offset(x: 0, y: -400)
             
             
             .popover(isPresented: $showingPopover, attachmentAnchor: .point(.center)) {

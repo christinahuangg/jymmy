@@ -6,13 +6,8 @@
 	objectVersion = 77;
 	objects = {
 
-/* Begin PBXBuildFile section */
-		BDCF987D2E4BD4CC0072150C /* 3Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCF987C2E4BD4CC0072150C /* 3Buttons.swift */; };
-/* End PBXBuildFile section */
-
 /* Begin PBXFileReference section */
 		BD2E0D9A2E4BBB4D0095F765 /* jymmy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = jymmy.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		BDCF987C2E4BD4CC0072150C /* 3Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 3Buttons.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -37,7 +32,6 @@
 		BD2E0D912E4BBB4D0095F765 = {
 			isa = PBXGroup;
 			children = (
-				BDCF987C2E4BD4CC0072150C /* 3Buttons.swift */,
 				BD2E0D9C2E4BBB4D0095F765 /* jymmy */,
 				BD2E0D9B2E4BBB4D0095F765 /* Products */,
 			);
@@ -125,7 +119,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BDCF987D2E4BD4CC0072150C /* 3Buttons.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
