@@ -42,7 +42,7 @@ struct front: View {
             Button("Quads") {
                 showingPopover = true
             }
-            .offset(x: -40, y: -250)
+            .offset(x: -70, y: -250)
             
             //abs
             Button("Abs") {
