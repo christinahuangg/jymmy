@@ -41,14 +41,14 @@ struct back: View {
             
             
             //calves button
-            Button("Calves") {
+            Button("    ") {
                 showingPopover = true
 
             }
             .offset(x: 40, y: -140)
             
             //hamstrings
-            Button("Hamstrings") {
+            Button("    ") {
                 showingPopover = true
 
             }
@@ -56,14 +56,14 @@ struct back: View {
             .offset(x: -35, y: -235)
             
             //back
-            Button("Back") {
+            Button("    ") {
                 showingPopover = true
 
             }
             .offset(x: 0, y: -450)
             
             //triceps
-            Button("Triceps") {
+            Button("    ") {
                 showingPopover = true
 
             }
@@ -111,9 +111,21 @@ struct back: View {
                 
             }//popover
            
+            ZStack{
+                Image("flip")
+                    .resizable(resizingMode: .stretch)
+                    .frame(width: 80.0, height: 60.0)
+                
+                Button(action: {
+                    flipped.toggle()
+                }) {
+                    Text("Flip for Front View")
+                        .foregroundColor(Color.white.opacity(0)) // custom color
+                        .padding()
+                        
+                        
+                }
 
-            Button("Flip for Front View") {
-                flipped.toggle()
             }
         }
     }

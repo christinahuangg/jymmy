@@ -26,8 +26,10 @@ struct home: View {
                         .fill(Color.mediumteal)
                         .frame(width:350, height:200,)
                     
+                    
                 }//vstack2 end
             }//Zstack end
+            
         }//Vstack 1 end
     }//body end
 }//struct end
