@@ -111,7 +111,6 @@ struct back: View {
                 
             }//popover
            
-
             ZStack{
                 Image("flip")
                     .resizable(resizingMode: .stretch)
