@@ -64,7 +64,7 @@ struct FavoritesView: View {
                                     }
                                 }
                                 .padding()
-                                .background(Color(UIColor.systemGray6))
+                                .background(Color: ("mediumteal"))
                                 .cornerRadius(10)
                                 .frame(maxWidth: .infinity, alignment: .leading)
                             }
