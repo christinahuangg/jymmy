@@ -13,16 +13,17 @@ struct _Buttons: View {
         NavigationStack{
             Spacer()
             Text("Welcome")
+                .fontWeight(.bold)
                 .foregroundColor(Color("dark bluegreen"))
                 .font(.system(size: 60))
-
+                
                 .shadow(radius: 15)
                 
             Spacer()
             Image("jymmy app icon")
                 .resizable()
                 .scaledToFit()
-                .frame(width: 250, height: 250)
+                .frame(width: 250, height: 250)            
             Spacer()
             HStack{
                 ZStack{
