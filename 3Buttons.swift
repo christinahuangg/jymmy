@@ -13,10 +13,9 @@ struct _Buttons: View {
         NavigationStack{
             Spacer()
             Text("Welcome")
-                .foregroundColor(Color("dark bluegreen"))
-                .font(.system(size: 60))
-
+                .font(.custom("GayoRound", fixedSize: 60))
                 .shadow(radius: 15)
+                .foregroundColor(Color("dark bluegreen"))
                 
             Spacer()
             Image("jymmy app icon")
@@ -24,6 +23,7 @@ struct _Buttons: View {
                 .scaledToFit()
                 .frame(width: 250, height: 250)
             Spacer()
+                .padding()
             HStack{
                 ZStack{
                     HStack{

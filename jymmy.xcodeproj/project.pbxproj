@@ -38,7 +38,7 @@
 			isa = PBXGroup;
 			children = (
 				BDCF987C2E4BD4CC0072150C /* 3Buttons.swift */,
-				BD2E0D9C2E4BBB4D0095F765 /* jymmy */,
+				BDF075D72E4E5DB400CEA034 /* New Group */,
 				BD2E0D9B2E4BBB4D0095F765 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -49,6 +49,14 @@
 				BD2E0D9A2E4BBB4D0095F765 /* jymmy.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		BDF075D72E4E5DB400CEA034 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				BD2E0D9C2E4BBB4D0095F765 /* jymmy */,
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
