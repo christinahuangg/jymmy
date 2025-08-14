@@ -9,27 +9,30 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-
+        
         
         ZStack{
             
-//            Image("background")
-//                .scaledToFill() // fill the entire frame without letterboxing
-//                .frame(maxWidth: .infinity, maxHeight: .infinity) // take all available space
-//                .ignoresSafeArea() // go under safe areas
-    
+            //            Image("background")
+            //                .scaledToFill() // fill the entire frame without letterboxing
+            //                .frame(maxWidth: .infinity, maxHeight: .infinity) // take all available space
+            //                .ignoresSafeArea() // go under safe areas
+            
             NavigationStack{
-                NavigationLink("Fav") {
+                NavigationLink("YOUR FAVORITE WORKOUTS: CLICK HERE!!") {
                     FavoritesView()
                 }
+                
             }
-            }
-
         }//ZStack
     }//body
-
-
-
-#Preview {
-    ContentView()
+    
 }
+        
+    
+#Preview {
+            ContentView()
+        }
+        
+
+

@@ -16,18 +16,20 @@ struct home: View {
                     
                     RoundedRectangle(cornerRadius: 15)
                         .fill(Color.verylightteal)
-                        .frame(width:300, height:150, alignment:.topLeading)
+                        .frame(width:350, height:200, alignment:.topLeading)
                     
                     RoundedRectangle(cornerRadius: 15)
                         .fill(Color.darkteal)
-                        .frame(width:300, height:150, alignment:.center)
+                        .frame(width:350, height:200, alignment:.center)
                     
                     RoundedRectangle(cornerRadius: 15)
                         .fill(Color.mediumteal)
-                        .frame(width:300, height:150,)
+                        .frame(width:350, height:200,)
+                    
                     
                 }//vstack2 end
             }//Zstack end
+            
         }//Vstack 1 end
     }//body end
 }//struct end

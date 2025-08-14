@@ -8,37 +8,49 @@
 import SwiftUI
 
 struct _Buttons: View {
-    
+   
     var body: some View {
-        Spacer()
         NavigationStack{
-            VStack{
+            Spacer()
+            Text("Welcome")
+                .foregroundColor(Color("dark bluegreen"))
+                .font(.system(size: 60))
+
+                .shadow(radius: 15)
+                
+            Spacer()
+            Image("jymmy app icon")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 250, height: 250)
+            Spacer()
+            HStack{
                 ZStack{
                     HStack{
-                        NavigationLink(destination: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Destination@*/Text("Destination")/*@END_MENU_TOKEN@*/) {
+                        NavigationLink(destination: home()) {
                             Image(systemName: "house.fill")
-                                .font(.system(size: 55))
+                                .font(.system(size: 60))
                                 .buttonStyle(.borderedProminent)
                                 .foregroundColor(Color("dark bluegreen"))
                         }
                         .padding()
-                        NavigationLink(destination: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Destination@*/Text("Destination")/*@END_MENU_TOKEN@*/) {
+                        NavigationLink(destination: front()) {
                             Image(systemName: "dumbbell.fill")
-                                .font(.system(size: 65))
+                                .font(.system(size: 70))
                                 .foregroundColor(Color("dark bluegreen"))
                         }
                         .padding()
-                        NavigationLink(destination: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Destination@*/Text("Destination")/*@END_MENU_TOKEN@*/) {
+                        NavigationLink(destination: FavoritesView()) {
                             Image(systemName: "heart.fill")
-                                .font(.system(size: 55))
+                                .font(.system(size: 60))
                                 .foregroundColor(Color("dark bluegreen"))
                         }
                         .padding()
                     }//end HStack
-                    .frame(width:350, height:100, alignment: .center)
+                    .frame(width:370, height:110, alignment: .center)
                     .background(
                         RoundedRectangle(cornerRadius: 25)
-                            .fill(Color("mediumteal").opacity(0.15))
+                            .fill(Color("verylightteal"))
                             .shadow(radius: 10) // shadow to the background box
                     )//end green background
                 }//end ZStack
