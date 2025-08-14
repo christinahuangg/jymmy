@@ -8,6 +8,7 @@ struct front: View {
 
     var body: some View {
         VStack {
+            
             if flipped {
                 back()
                     .rotation3DEffect(.degrees(180), axis: (x: 0, y: 1, z: 0))
@@ -21,31 +22,33 @@ struct front: View {
     }
     
     var frontBody: some View {
+        
         VStack {
+            
             Image("front")
                 .resizable()
                 .frame(width: 200.0, height: 550.0)
             
             //chest
-            Button("Chest") {
+            Button("    ") {
                 showingPopover = true
             }
             .offset(x: 0, y: -420)
             
             //biceps
-            Button("Biceps") {
+            Button("    ") {
                 showingPopover = true
             }
             .offset(x: -70, y: -420)
             
             //quads
-            Button("Quads") {
+            Button("    ") {
                 showingPopover = true
             }
             .offset(x: -40, y: -250)
             
             //abs
-            Button("Abs") {
+            Button("    ") {
                 showingPopover = true
 
             }
@@ -94,10 +97,24 @@ struct front: View {
                 
             }//popover
     
-            
-            Button("Flip for Back View") {
-                flipped.toggle()
+            ZStack{
+                Image("flip")
+                    .resizable(resizingMode: .stretch)
+                    .frame(width: 80.0, height: 60.0)
+                
+                Button(action: {
+                    flipped.toggle()
+                }) {
+                    Text("Flip for Front View")
+                        .foregroundColor(Color.white.opacity(0)) // custom color
+                        .padding()
+                        
+                        
+                }
+
             }
+
+
         }
     }
 }

@@ -15,20 +15,20 @@ struct _Buttons: View {
             VStack{
                 ZStack{
                     HStack{
-                        NavigationLink(destination: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Destination@*/Text("Destination")/*@END_MENU_TOKEN@*/) {
+                        NavigationLink(destination: home()) {
                             Image(systemName: "house.fill")
                                 .font(.system(size: 55))
                                 .buttonStyle(.borderedProminent)
                                 .foregroundColor(Color("dark bluegreen"))
                         }
                         .padding()
-                        NavigationLink(destination: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Destination@*/Text("Destination")/*@END_MENU_TOKEN@*/) {
+                        NavigationLink(destination: front()) {
                             Image(systemName: "dumbbell.fill")
                                 .font(.system(size: 65))
                                 .foregroundColor(Color("dark bluegreen"))
                         }
                         .padding()
-                        NavigationLink(destination: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Destination@*/Text("Destination")/*@END_MENU_TOKEN@*/) {
+                        NavigationLink(destination: FavoritesView()) {
                             Image(systemName: "heart.fill")
                                 .font(.system(size: 55))
                                 .foregroundColor(Color("dark bluegreen"))
