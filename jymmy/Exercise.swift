@@ -106,3 +106,6 @@ let noEquipmentCategories: [ExerciseCategory] = [
         ]
     )
 ]
+
+
+
