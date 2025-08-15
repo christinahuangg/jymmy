@@ -1,15 +1,14 @@
-//
-//  SwiftUIView.swift
-//  jymmy
-//
-//  Created by Scholar on 8/12/25.
-//
 import SwiftUI
+import AVKit
 
 struct FavoritesView: View {
     @State private var showPopover = false
     @State private var favoriteExerciseIDs: Set<UUID> = []
-
+    @State private var showVideo = false
+    
+    // Example video URL for Wall Sit
+    let wallSitVideoURL = URL(string: "https://youtu.be/-cdph8hv0O0")!
+    
     var body: some View {
         VStack {
             HStack {
@@ -35,17 +34,40 @@ struct FavoritesView: View {
                                     ForEach(category.exercises) { exercise in
                                         HStack {
                                             VStack(alignment: .leading, spacing: 4) {
-                                                Text(exercise.name)
-                                                    .font(.headline)
-                                                    .foregroundColor(Color("creamwhite"))
-                                                if !exercise.level.isEmpty {
-                                                    Text("Level: \(exercise.level)")
-                                                        .font(.subheadline)
-                                                        .foregroundColor(Color("lightgrey"))
+                                                // If it's Wall Sit, make it tappable
+                                                if exercise.name == "Wall Sit" {
+                                                    Button {
+                                                        showVideo = true
+                                                    } label: {
+                                                        VStack(alignment: .leading, spacing: 4) {
+                                                            Text(exercise.name)
+                                                                .font(.headline)
+                                                                .foregroundColor(Color("creamwhite"))
+                                                            if !exercise.level.isEmpty {
+                                                                Text("Level: \(exercise.level)")
+                                                                    .font(.subheadline)
+                                                                    .foregroundColor(Color("lightgrey"))
+                                                            }
+                                                            Text(exercise.instructions)
+                                                                .font(.footnote)
+                                                                .foregroundColor(Color("creamwhite"))
+                                                        }
+                                                    }
+                                                    .buttonStyle(.plain)
+                                                } else {
+                                                    // Normal text for other exercises
+                                                    Text(exercise.name)
+                                                        .font(.headline)
+                                                        .foregroundColor(Color("creamwhite"))
+                                                    if !exercise.level.isEmpty {
+                                                        Text("Level: \(exercise.level)")
+                                                            .font(.subheadline)
+                                                            .foregroundColor(Color("lightgrey"))
+                                                    }
+                                                    Text(exercise.instructions)
+                                                        .font(.footnote)
+                                                        .foregroundColor(Color("creamwhite"))
                                                 }
-                                                Text(exercise.instructions)
-                                                    .font(.footnote)
-                                                    .foregroundColor(Color("creamwhite"))
                                             }
                                             
                                             Spacer()
@@ -95,10 +117,14 @@ struct FavoritesView: View {
                             .font(.headline)
                             .fontWeight(.bold)
                             .foregroundColor(Color("dark bluegreen"))
-                        
                     }
                 }
             }
+        }
+        // Sheet for in-app video
+        .sheet(isPresented: $showVideo) {
+            VideoPlayer(player: AVPlayer(url: wallSitVideoURL))
+                .edgesIgnoringSafeArea(.all)
         }
     }
 }
@@ -106,4 +132,3 @@ struct FavoritesView: View {
 #Preview {
     FavoritesView()
 }
-
