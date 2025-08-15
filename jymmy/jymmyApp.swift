@@ -11,7 +11,7 @@ import SwiftUI
 struct jymmyApp: App {
     var body: some Scene {
         WindowGroup {
-            home()
+            _Buttons()
         }
     }
 }
